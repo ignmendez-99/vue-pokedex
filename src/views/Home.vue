@@ -1,8 +1,14 @@
 <template>
-  <div class="home">
-    <PokemonList/>
-    <PokemonDisplay/>
-  </div>
+  <v-container fluid class="py-0">
+    <v-row>
+      <v-col cols="3">
+        <PokemonList />
+      </v-col>
+      <v-col>
+        <PokemonDisplay />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
