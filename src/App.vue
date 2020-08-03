@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <v-content>
+    <v-main>
       <router-view />   <!-- esto esta invocando a Home.vue -->
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
