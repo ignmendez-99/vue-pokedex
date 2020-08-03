@@ -74,7 +74,9 @@ export default {
           });
         });   
       }
+
       this.numberOfDisplayedPokemons = currentMax + 50;
+
       setTimeout(() => {
         this.pokemonsNotSorted.sort((pokemon1, pokemon2) => {
           return pokemon1.id - pokemon2.id;
@@ -88,10 +90,13 @@ export default {
     let thisVue = this;
     let counter = 0;
     P.getPokemonsList().then(response => {
+      
       response.results.forEach(pokemon => {
         const pokemonDataURL = pokemon.url;
         thisVue.allPokemonsDataURL.push(pokemonDataURL);
+
         if (counter < thisVue.initialLoadingPokemons) {
+
           axios.get(pokemonDataURL).then(response => {
             thisVue.pokemonsNotSorted.push({
               id: response.data.id,
@@ -99,9 +104,11 @@ export default {
               imageURL: response.data.sprites.front_default
             });
           });
+
           counter++;
         }
       });
+
       setTimeout(() => {
         thisVue.pokemonsNotSorted.sort((pokemon1, pokemon2) => {
           return pokemon1.id - pokemon2.id;
